@@ -8,7 +8,7 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./signup.css";
 import Fade from "react-reveal/Fade";
 import swal from "sweetalert";
