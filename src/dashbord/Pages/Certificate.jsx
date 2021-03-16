@@ -15,8 +15,8 @@ function Certificate() {
             <img src={Userprofile} className="userprofile" alt="profile" />
             <br />
             <br />
-            <input type="file" onChange={(profile) => {
-                console.log(profile.target.files, "result aaya hai")}} />
+            <input type="file" onChange={(e) => {
+                console.log(e.target.files, "result aaya hai")}} />
             <br />
             <br />
             <h1 className="certificate-h1">Rahul kirar</h1>
