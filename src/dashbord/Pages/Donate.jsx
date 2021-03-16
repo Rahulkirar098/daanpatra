@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import "./donate.css";
 
-
 function Donate() {
-
 
     const [product_category, setProductCategory] = useState("")
     const [quantity, setQuantity] = useState()
@@ -37,7 +35,7 @@ function Donate() {
         ((result) => {
             console.log("result", result);
         })
-    }
+    }   
 
     return (
         <div className="donatedashbord">
@@ -65,20 +63,16 @@ function Donate() {
                 onChange={(e) => {setQuantity(e.target.value)}} />
                 <br /><br />
                 <input className="dashbord-input" placeholder="Pick Up Time" value={pickup_time} type="time" required 
-                onChange={(e) => {setPickupTime(e.target.value)
-                }} />
+                onChange={(e) => {setPickupTime(e.target.value)}} />
                 <br /><br />
                 <input className="dashbord-input" placeholder="Pick Up Date" value={pickup_date} type="date" required onChange={(e) => {
-                    setPickupDate(e.target.value)
-                }} />
+                    setPickupDate(e.target.value)}} />
                 <br /><br />
                 <input className="dashbord-input" placeholder="Pick Up Address" value={pickup_address} onChange={(e) => {
-                    setPickAddress(e.target.value)
-                }} />
+                    setPickAddress(e.target.value)}} />
                 <br /><br />
                 <input className="dashbord-input" placeholder="Discripation" value={product_description} onChange={(e) => {
-                    setProductDescription(e.target.value)
-                }} />
+                    setProductDescription(e.target.value) }} />
                 <br /><br />
                 <input type="file"  onChange={imagedata}/>
                 <br /><br />
@@ -92,4 +86,4 @@ function Donate() {
     )
 }
 
-export default Donate
+export default Donate;
