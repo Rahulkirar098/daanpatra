@@ -8,7 +8,7 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import "./signup.css";
 import Fade from "react-reveal/Fade";
 import swal from "sweetalert";
@@ -38,17 +38,19 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
 
-
+  
   const[first_name,setFristName] = useState('');
   const[last_name,setLastName] = useState('');
   const[contact,setContact] = useState('');
+  
+  const history = useHistory()
 
   const signUp = () =>{
 
         
         let data = {first_name,last_name,contact};
 
-        fetch("http://13.126.128.217/user-register/",{
+        fetch("http://35.154.26.180/user-register/",{
           method:'POST',
           headers:{
             'Accept':'application/json',
@@ -58,8 +60,9 @@ export default function SignUp() {
         }).then((result)=>{
           console.log("result",result);
         })
-        // console.log(data)
+        console.log(data)
         swal("Good job!", "You Register!", "success");
+        history.push('/login')
 
       }
 
@@ -134,7 +137,7 @@ export default function SignUp() {
             </Grid>
           </Grid>
         </div>
-        <Box mt={5}>{/* <Copyright /> */}</Box>
+        <Box mt={5}></Box>
       </Container>
     </Fade>
   );

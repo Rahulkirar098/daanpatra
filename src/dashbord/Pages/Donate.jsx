@@ -9,7 +9,7 @@ function Donate() {
     const [pickup_date, setPickupDate] = useState("")
     const [pickup_address, setPickAddress] = useState("")
     const [product_description, setProductDescription] = useState("")
-    const [images, setProductImage] = useState("")
+    const [images, setProductImage] = useState([])
 
     const imagedata = (e) =>{
             setProductImage(e.target.files[0])

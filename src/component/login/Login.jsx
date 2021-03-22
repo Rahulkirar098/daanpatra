@@ -15,6 +15,8 @@ import { otpGenerate } from "../../config/ApiHandler";
 import Fade from "react-reveal/Fade";
 import { useHistory } from "react-router-dom";
 import { AuthenticationCtxt } from "../../context/authenticationCtxt";
+import swal from "sweetalert";
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -68,9 +70,13 @@ export default function SignIn() {
         },
         (error) => {
           console.log(error);
+        swal("Contact Number Not Registered","", "warning");
+
+         
         }
       );
     }
+
   };
 
   return (

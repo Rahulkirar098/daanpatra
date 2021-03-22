@@ -13,11 +13,12 @@ const Volunteer = () => {
     const[address,setAddress] = useState('');
 
     const volunteersumit = (v) =>{
+      
         v.preventDefault();
 
         let volunteerdata = {full_name,email,contact_no,address};
     console.log({full_name,email,contact_no,address})
-        fetch("http://13.126.128.217/volunteer/",{
+        fetch("http://35.154.26.180/volunteer/",{
           method:'POST',
           headers:{
             'Accept':'application/json',
