@@ -47,6 +47,7 @@ const dispalyshow = {
 };
 
 export default function SignIn() {
+  
   const classes = useStyles();
   const authCtxt = useContext(AuthenticationCtxt);
   const history = useHistory();
@@ -56,10 +57,10 @@ export default function SignIn() {
   const handleOtpGeneration = () => {
     if (display === dispalyshow) {
       signin(phoneNo, otp, (response) => {
-        history.push("/dashbord");
         authCtxt.setAuthData(response.User.Username);
         localStorage.setItem("phoneNo", response.User.Username);
-        localStorage.setItem("token", response.Data.token_type +" " + response.Data.access_token)
+        localStorage.setItem("token", response.Data.token_type + " " + response.Data.access_token)
+        history.push("/certificate");
       });
     } else {
       otpGenerate(
@@ -67,16 +68,14 @@ export default function SignIn() {
         (response) => {
           
           setDisplay(dispalyshow);
+          console.log(response)
         },
         (error) => {
           console.log(error);
         swal("Contact Number Not Registered","", "warning");
-
-         
         }
       );
     }
-
   };
 
   return (
@@ -135,7 +134,7 @@ export default function SignIn() {
             </Grid>
           </Grid>
         </div>
-        <Box mt={8}>{/* <Copyright /> */}</Box>
+        <Box mt={8}></Box>
       </Container>
     </Fade>
   );

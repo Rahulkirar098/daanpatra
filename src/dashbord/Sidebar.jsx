@@ -15,7 +15,6 @@ const Sidebar = () => {
     const history = useHistory();
     const authCtxt = useContext(AuthenticationCtxt);
 
-    // const [data, setUserdata] = useState([])
 
     const logout = () => {
         localStorage.clear();

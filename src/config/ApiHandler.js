@@ -15,7 +15,7 @@ const getResult = (
   }
   parameters.headers = {
     "Content-Type": "application/json",
-    // Accept: x"application/json",
+    // Accept: x "application/json",
   };
   try {
     fetch(conf.apiUrl + url, parameters)

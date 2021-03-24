@@ -4,26 +4,26 @@ import "./donate.css";
 function Donate() {
 
     const [product_category, setProductCategory] = useState("")
-    const [quantity, setQuantity] = useState()
+    const [quantity, setQuantity] = useState("")
     const [pickup_time, setPickupTime] = useState("")
     const [pickup_date, setPickupDate] = useState("")
     const [pickup_address, setPickAddress] = useState("")
     const [product_description, setProductDescription] = useState("")
     const [images, setProductImage] = useState([])
 
-    const imagedata = (e) =>{
-            setProductImage(e.target.files[0])
-            console.log(e.target.files[0])
-      }        
+    const imagedata = (e) => {
+        setProductImage(e.target.files[0])
+        // console.log(e.target.files[0])
+    }
 
-    const donatesubmit = async(d) => {
+    const donatesubmit = async (d) => {
         d.preventDefault();
         console.log({ product_category, quantity, pickup_time, pickup_date, pickup_address, product_description, images });
         let donateData = { product_category, quantity, pickup_time, pickup_date, pickup_address, product_description, images };
-      
+
         let token = await localStorage.getItem("token");
-       
-        fetch("http://13.126.128.217/donation/", {
+
+        fetch("http://35.154.26.180/donation/", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -32,10 +32,10 @@ function Donate() {
             },
             body: JSON.stringify(donateData)
         }).then
-        ((result) => {
-            console.log("result", result);
-        })
-    }   
+            ((result) => {
+                console.log("result", result);
+            })
+    }
 
     return (
         <div className="donatedashbord">
@@ -45,39 +45,40 @@ function Donate() {
             <form onSubmit={(d) => donatesubmit(d)}>
 
                 <select className="dashbord-select"
-                name="category"  
-                id="asd"
-                value={product_category}
-                onChange={(e) => {setProductCategory(e.target.value)}}>
-
+                    name="category"
+                    // id="asd"
+                    value={product_category}
+                    onChange={(e) => { setProductCategory(e.target.value) }}>
+                    <option defaultValue >Product</option>
                     <option value="cloths" >Clothes</option>
                     <option value="food" >Raw Food</option>
                     <option value="utensils" >Utensils</option>
                     <option value="equipments" >Equipments</option>
                     <option value="books" >Books</option>
                     <option value="other" >Other</option>
-
                 </select>
                 <br /><br />
-                <input className="dashbord-input" type="number" value={quantity} placeholder="Quantity" 
-                onChange={(e) => {setQuantity(e.target.value)}} />
+                <input className="dashbord-input" type="number" value={quantity} placeholder="Quantity"
+                    onChange={(e) => { setQuantity(e.target.value) }} />
                 <br /><br />
-                <input className="dashbord-input" placeholder="Pick Up Time" value={pickup_time} type="time" required 
-                onChange={(e) => {setPickupTime(e.target.value)}} />
+                <input className="dashbord-input" placeholder="Pick Up Time" value={pickup_time} type="time" required
+                    onChange={(e) => { setPickupTime(e.target.value) }} />
                 <br /><br />
                 <input className="dashbord-input" placeholder="Pick Up Date" value={pickup_date} type="date" required onChange={(e) => {
-                    setPickupDate(e.target.value)}} />
+                    setPickupDate(e.target.value)
+                }} />
                 <br /><br />
-                <input className="dashbord-input" placeholder="Pick Up Address" value={pickup_address} onChange={(e) => {
-                    setPickAddress(e.target.value)}} />
+                <input className="dashbord-input" placeholder=" Pick Up Address" value={pickup_address} onChange={(e) => {
+                    setPickAddress(e.target.value)
+                }} />
                 <br /><br />
-                <input className="dashbord-input" placeholder="Discripation" value={product_description} onChange={(e) => {
-                    setProductDescription(e.target.value) }} />
+                <input className="dashbord-input" placeholder=" Discripation " value={product_description} onChange={(e) => {
+                    setProductDescription(e.target.value)
+                }} />
                 <br /><br />
-                <input type="file"  onChange={imagedata}/>
+                <input type="file" onChange={imagedata} />
                 <br /><br />
                 <button className="dashbord-button-donate" type="submit">Submit</button>
-
 
             </form>
 
