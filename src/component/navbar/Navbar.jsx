@@ -9,13 +9,6 @@ import Slide from 'react-reveal/Slide';
 
 const Head = () => {
 
-
-
-
-useEffect(() => {
-  
-}, [])
-
     return (
 
             <header>
@@ -30,7 +23,7 @@ useEffect(() => {
                         <li><NavLink exact activeClassName="active" to="/">Home</NavLink></li>
                         <li><NavLink exact activeClassName="active" to="/weare">We Are</NavLink></li>
                         <li><NavLink exact activeClassName="active" to="/whatwedo">We Do</NavLink></li>
-                        <li><NavLink exact activeClassName="active" to="/galleryhome">Gallery</NavLink></li>
+                        <li><NavLink exact activeClassName="active" to="/gallery">Gallery</NavLink></li>
                         <li><NavLink exact activeClassName="active" to="/login">Donate</NavLink></li>
                         <li><NavLink exact activeClassName="active" to="/Volunteer">Volunteer</NavLink></li>
                         <li><NavLink exact activeClassName="active" to="/contact">Contact</NavLink></li> 

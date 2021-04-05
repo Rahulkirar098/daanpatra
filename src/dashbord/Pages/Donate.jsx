@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./donate.css";
+import moment from "moment";
 
 function Donate() {
 
@@ -13,7 +14,7 @@ function Donate() {
 
     const imagedata = (e) => {
         setProductImage(e.target.files[0])
-        // console.log(e.target.files[0])
+
     }
 
     const donatesubmit = async (d) => {
@@ -46,7 +47,6 @@ function Donate() {
 
                 <select className="dashbord-select"
                     name="category"
-                    // id="asd"
                     value={product_category}
                     onChange={(e) => { setProductCategory(e.target.value) }}>
                     <option defaultValue >Product</option>
