@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./donate.css";
-import moment from "moment";
+// import moment from "moment";
 
 function Donate() {
 
@@ -18,12 +18,13 @@ function Donate() {
     }
 
     const donatesubmit = async (d) => {
+
         d.preventDefault();
         console.log({ product_category, quantity, pickup_time, pickup_date, pickup_address, product_description, images });
         let donateData = { product_category, quantity, pickup_time, pickup_date, pickup_address, product_description, images };
 
         let token = await localStorage.getItem("token");
-
+            console.log(token);
         fetch("http://35.154.26.180/donation/", {
             method: 'POST',
             headers: {
@@ -44,7 +45,6 @@ function Donate() {
             <h1>Donate</h1>
 
             <form onSubmit={(d) => donatesubmit(d)}>
-
                 <select className="dashbord-select"
                     name="category"
                     value={product_category}
@@ -78,10 +78,8 @@ function Donate() {
                 <br /><br />
                 <input type="file" onChange={imagedata} />
                 <br /><br />
-                <button className="dashbord-button-donate" type="submit">Submit</button>
-
+                <button  className="dashbord-button-donate" type="submit">Submit</button>
             </form>
-
 
         </div>
     )

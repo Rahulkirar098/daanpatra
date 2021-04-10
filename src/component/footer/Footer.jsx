@@ -41,10 +41,10 @@ const Footer = () => {
 						<div className="footer-col">
 							<h4>follow us</h4>
 							<div className="social-links">
-								<a href="rahul"><i className="fab fa-facebook-f"></i></a>
-								<a href="rahul"><i className="fab fa-twitter"></i></a>
-								<a href="rahul"><i className="fab fa-instagram"></i></a>
-								<a href="rahul"><i className="fab fa-youtube"></i></a>
+								<a href="https://www.facebook.com/DaanpatraApp/"><i className="fab fa-facebook-f"></i></a>
+								<a href="https://twitter.com/DaanpatraApp?s=08 "><i className="fab fa-twitter"></i></a>
+								<a href="https://youtube.com/channel/UCksP5RUnofyLfadbxrCN0hw"><i className="fab fa-instagram"></i></a>
+								<a href="https://www.instagram.com/_daanpatra_/"><i className="fab fa-youtube"></i></a>
 							</div>
 						</div>
 					</div>

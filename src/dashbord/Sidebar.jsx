@@ -15,6 +15,7 @@ const Sidebar = () => {
     const history = useHistory();
     const authCtxt = useContext(AuthenticationCtxt);
 
+    const getuser = localStorage.getItem("name");
 
     const logout = () => {
         localStorage.clear();
@@ -22,13 +23,14 @@ const Sidebar = () => {
         history.push('/')
     }
     
+   
 
     return (
         <div className="dashbord-sidebar">
             <div className="sidebar">
                 <div className="Profile">
                     <img className="userprofile" src={Userprofile} alt="profile" />
-                   <h2>Rahul</h2>
+                   <h2>{getuser}</h2>
 
                 </div>
                 <ul className="sidebarmenu">

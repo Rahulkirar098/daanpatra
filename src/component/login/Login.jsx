@@ -58,8 +58,9 @@ export default function SignIn() {
     if (display === dispalyshow) {
       signin(phoneNo, otp, (response) => {
         authCtxt.setAuthData(response.User.Username);
-        localStorage.setItem("phoneNo", response.User.Username);
+        localStorage.setItem("phoneNo", response.User.Username)
         localStorage.setItem("token", response.Data.token_type + " " + response.Data.access_token)
+        localStorage.setItem("name", response.User.Name)
         history.push("/certificate");
       });
     } else {

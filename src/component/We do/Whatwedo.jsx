@@ -18,7 +18,7 @@ const WhatWeDo = () => {
                             autoStart: true,
                             loop: true,
                         }} onInit={(wedo) => {
-                            wedo.typeString("At Daanpatra, we provide practical, tangible help that makes an immediate difference to orphaned children. We are working towards a day when every child can grow up in a loving family.")
+                            wedo.typeString(`At Daanpatra, we provide practical, tangible help that makes an immediate difference to orphaned children. We are working towards a day when every child can grow up in a loving family.`)
                                 .pauseFor(2000)
                                 .start();
                         }}
@@ -30,7 +30,7 @@ const WhatWeDo = () => {
 
                     <div className="Hunger">
                         <img src={Food} alt="img" />
-                        <h2>Food</h2>
+                        <h2>Raw Food</h2>
                         <p>We aim to redistribute surplus food to those who are in need of it. Please call our helpline, our volunteers will collect the excess food.</p>
                     </div>
 

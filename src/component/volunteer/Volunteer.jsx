@@ -7,6 +7,7 @@ import swal from "sweetalert";
 
 
 const Volunteer = () => {
+
     const[full_name,setFullName] = useState('');
     const[email,setEmail] = useState('');
     const[contact_no,setContact_no] = useState('');
@@ -17,7 +18,9 @@ const Volunteer = () => {
         v.preventDefault();
 
         let volunteerdata = {full_name,email,contact_no,address};
-    console.log({full_name,email,contact_no,address})
+
+    // console.log({full_name,email,contact_no,address})
+
         fetch("http://35.154.26.180/volunteer/",{
           method:'POST',
           headers:{
@@ -28,12 +31,15 @@ const Volunteer = () => {
         }).then((result)=>{
           console.log("result",result);
         })
+        
         setFullName("")
         setEmail("")
         setContact_no("")
         setAddress("")
       
         swal("Good job!", "You Are Done!", "success");
+
+
 
       }
         
